@@ -1,0 +1,12 @@
+block variables
+
+block header
+    section
+        .header
+            .header__logo
+                a(href='#')
+                    img(class='header__logoImage' src=require('Images/logo.svg'))
+                a(href='#' class='header__logoText')= serviceName
+            .header__theme
+                a(class='header__themeSelector' href='#')
+                    img(class='header__themeIcon' src=require('Images/icons/lightTheme.svg'))

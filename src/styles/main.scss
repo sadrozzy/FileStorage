@@ -1,0 +1,42 @@
+@import "./colors";
+@font-face {
+  font-family: 'OpenSans';
+  src: url("Fonts/OpenSans/OpenSansV.ttf");
+}
+
+h1,h2,h3,h4,p,span,a{
+  font-family: 'OpenSans';
+}
+a{
+  text-decoration: none;
+}
+
+.container{
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+//HEADER
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  height: 50px;
+  .header__logo{
+    display: flex;
+    align-items: center;
+    .header__logoImage{
+      height: 45px;
+      width: 45px;
+    }
+
+    .header__logoText{
+      margin-left: 10px;
+      font-family: 'OpenSans';
+      color: $text;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+}
