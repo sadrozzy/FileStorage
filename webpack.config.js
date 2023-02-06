@@ -11,7 +11,7 @@ module.exports = (env, argv) => {
     stats: 'minimal',
 
     entry: {
-        index: 'src/views/auth/login.pug',
+        index: 'index.pug',
         signup: 'src/views/auth/signup.pug',
         forgot: 'src/views/auth/forgot.pug',
     },

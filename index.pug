@@ -1,15 +1,15 @@
 extends Views/layouts/default.pug
 append script
-    script(src=require('./main.js') defer='')
+    script(src=require('./src/views/auth/main.js') defer='')
 block variables
     - const title = 'Авторизация'
 
 append style
     link(href=require('normalize.css') rel='stylesheet')
-    link(href=require('./styles.scss') rel='stylesheet')
+    link(href=require('./src/views/auth/styles.scss') rel='stylesheet')
 
 block content
-    include ../../modules/header
+    include src/modules/header
     section
         .main
             .formWrapper
