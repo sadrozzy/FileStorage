@@ -1,0 +1,20 @@
+mixin subheader__btn (icon, name, type)
+    .subheader__btn(class= type)
+        img(src= require(`@/assets/icons/${icon}.svg`))
+        span #{name}
+
+mixin subheader__sort
+    .subheader__sort
+        img(src= require(`@/assets/icons/sort.svg`))
+        span.sort__value По Названию
+        img(src= require(`@/assets/icons/chevron.svg`))
+
+mixin subheader
+    .subheader
+        .subheader__col.col1
+            +subheader__btn ('upload', 'Upload', 'upload')
+            +subheader__btn ('add', 'Add Folder', 'addFolder')
+        .subheader__col.col2
+            +subheader__sort
+            .subheader__viewMode
+                img(src= require(`@/assets/icons/grid.svg`))
