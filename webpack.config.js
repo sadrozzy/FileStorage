@@ -74,7 +74,7 @@ const plugins = () => {
     return [
         new HTMLWebpackPlugin({
             template: path.join(__dirname, 'index.pug'),
-            filename: 'index.html',
+            filename: filename('html'),
         }),
         new MiniCssExtractPlugin({
             filename: filename('css')
@@ -149,7 +149,7 @@ module.exports = {
                 test: /\.(ttf|woff|woff2|eot)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'assets/fonts/[name].[hash:8][ext]',
+                    filename: `assets/fonts/[name].[hash:8][ext]`,
                 },
             },
             {
