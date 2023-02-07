@@ -7,7 +7,6 @@ const cssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 //const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
 //const CopyWebpackPlugin = require('copy-webpack-plugin')
-
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 const optimization = () => {
@@ -140,12 +139,18 @@ module.exports = {
                 use: cssLoaders('sass-loader')
             },
             {
-                test: /\.(png|jpg|svg|gif)$/,
-                type: 'asset/resource'
+                test: /\.(png|jpe?g|svg|gif)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/icons/[name].[hash:8][ext]',
+                },
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
-                type: 'asset/resource'
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/fonts/[name].[hash:8][ext]',
+                },
             },
             {
                 test: /\.js$/,
