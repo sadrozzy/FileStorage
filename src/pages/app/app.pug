@@ -1,13 +1,12 @@
-doctype html
-html(lang= 'ru')
-    head
-        meta(charset='utf-8')
-        title= 'CloudStorage'
-    body.page
-        include ../../components/components
-        +header
-        .page__row
-            +sidebar
-            .page__col
-                +subheader
+extends ../template
+
+block variables
+    - const title = 'CloudStorage'
+
+block content
+    +header
+    .page__row
+        +sidebar
+        .page__col
+            +subheader
 
