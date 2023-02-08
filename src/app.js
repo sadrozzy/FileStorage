@@ -22,7 +22,7 @@ import '@/assets/icons/sort.svg'
 import '@/assets/icons/chevron.svg'
 import '@/assets/icons/grid.svg'
 
-
+//21
 //Fonts
 // import '@/assets/fonts/OpenSans-SemiBold.ttf'
 // import '@/assets/fonts/OpenSans-Regular.ttf'
