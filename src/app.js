@@ -1,5 +1,5 @@
 //Styles
-import '@/style.scss'
+import '@/page.scss'
 import '@/components/header/header.scss'
 import '@/components/sidebar/sidebar.scss'
 import '@/components/subHeader/subHeader.scss'
