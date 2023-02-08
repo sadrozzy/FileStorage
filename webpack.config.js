@@ -73,7 +73,7 @@ const plugins = () => {
 
     return [
         new HTMLWebpackPlugin({
-            template: path.join(__dirname, 'index.pug'),
+            template: path.join(__dirname, 'app.pug'),
             filename: filename('html'),
         }),
         new MiniCssExtractPlugin({

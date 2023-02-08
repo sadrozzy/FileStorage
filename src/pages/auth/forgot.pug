@@ -1,0 +1,27 @@
+extends Views/layouts/default.pug
+
+append script
+    script(src=require('../../sasha/views/auth/main.js') defer)
+
+block variables
+    - const title = 'Регистрация'
+
+append style
+    link(href=require('./signUp.scss') rel='stylesheet')
+
+
+
+block content
+    include ../../sasha/modules/header
+    section
+        .main
+            .formWrapper
+                .formLogoWrapper
+                    img.formLogo(src=require('Images/logo.svg'))
+                    span.formLogoText CloudStorage
+
+                form.auth-form(class='')
+                    input.auth-input(placeholder='Username or E-mail' maxlength="50" name="form-name" type="text")
+                    button.formSubmit Восстановить пароль
+                    .form-links
+                        a(href='index.html') Назад
