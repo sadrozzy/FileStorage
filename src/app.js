@@ -1,5 +1,6 @@
 //Styles
 import '@/pages/app/app.scss'
+import '@/pages/common.scss'
 import '@/components/header/header.scss'
 import '@/components/sidebar/sidebar.scss'
 import '@/components/subHeader/subHeader.scss'
