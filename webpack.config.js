@@ -5,8 +5,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const cssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
-//const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
-//const CopyWebpackPlugin = require('copy-webpack-plugin')
+
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 const optimization = () => {
