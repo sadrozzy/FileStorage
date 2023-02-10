@@ -1,40 +1,30 @@
-extends Views/layouts/default.pug
-
-append script
-    script(src=require('../../sasha/views/auth/main.js') defer)
+extends ../template
 
 block variables
-    - const title = 'Регистрация'
-
-append style
-    link(href=require('./styles.scss') rel='stylesheet')
-
-
+    - const title = 'Войти'
 
 block content
-    include ../../modules/header
-    section
-        .main
-            .formWrapper
-                .formLogoWrapper
-                    img.formLogo(src=require('Images/logo.svg'))
-                    span.formLogoText CloudStorage
+    +header(false)
+    section.main
+        .form
+            a.form__logo(class='header__logo_sizing')
+                img(src= require('@/assets/logo.svg') alt='logo')
+                span CloudStorage
+            +input(false, text, 'Username or E-mail')
+            +input(false, text, 'Password')
+            button.form__btn Войти
+            .form__links
+                a(href='forgot.html') Забыли пароль?
+                a(href='index.html') Регистрация
+            .form__social
+                span Войти через:
+                .form__iconsWrapper
+                    a(href='#')
+                        img(src=require('@/assets/googleLogo.svg'))
+                    a(href='#')
+                        img(src=require('@/assets/githubLogo.svg'))
+                    a(href='#')
+                        img.form__iconsWrapper_noMargin(src=require('@/assets/telegramLogo.svg'))
 
-                form.auth-form(class='')
-                    input.auth-input(placeholder='Username' maxlength="50" name="form-name" type="text")
-                    input.auth-input(placeholder='E-mail' maxlength="50" name="form-name" type="text")
-                    input.auth-input(placeholder='Password' maxlength="50" name="form-name" type="text")
-                    input.auth-input(placeholder='Confirm password' maxlength="50" name="form-name" type="text")
-                    button.formSubmit Войти
-                    .form-links
-                        a(href='forgot.html') Забыли пароль?
-                        a(href='index.html') Регистрация
-                    .form-social
-                        span.form-socialText Войти через:
-                        .form-iconsWrapper
-                            a(href='#')
-                                img.form-socialIcons(src=require('Images/icons/Google.svg'))
-                            a(href='#')
-                                img.form-socialIcons(src=require('Images/icons/github.svg'))
-                            a(href='#')
-                                img.form-socialIcons(src=require('Images/icons/telegram.svg'))
+
+

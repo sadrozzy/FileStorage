@@ -3,7 +3,7 @@ mixin header__btn (type, icon)
         img(src= require(`@/assets/icons/${icon}.svg`) alt=`${type}`)
 
 mixin header__logo
-    a.header__logo
+    a.header__logo()
         img(src= require('@/assets/logo.svg') alt='logo')
         span CloudStorage
 
@@ -22,4 +22,5 @@ mixin header (authorized=true)
                 +header__search
         .header__col.col3
             +header__btn('theme','moon')
-            +header__btn('profile','profile')
+            if authorized
+                +header__btn('profile','profile')

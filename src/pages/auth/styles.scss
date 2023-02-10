@@ -1,99 +1,75 @@
-@import "../../styles/colors";
+@import "@/components/variable.scss";
 
 body{
-  background-color: $bg;
+  background-color: $bg-lightTheme-base;
 }
 
 .main{
   display: flex;
-  height: 60vh;
   justify-content: center;
   align-items: center;
-  .formWrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: $bgSub;
-    padding: 40px 30px;
-    border-radius: 15px;
-    .formLogoWrapper{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 50px;
-      height: 50px;
-      .formLogoText{
-        color: white;
-        font-size: 18px;
-        font-weight: 600;
-        font-size: 24px;
-      }
-      .formLogo{
-        margin-right: 10px;
-        width: 50px;
-        height: 50px;
-      }
-    }
-    .auth-form{
-      display: flex;
-      flex-direction: column;
-      .auth-input{
-        font-family: 'OpenSans';
-        font-weight: 600;
-        font-size: 16px;
-        background: $bgNuance;
-        color: $textNuance;
-        outline: none;
-        border: none;
-        border-radius: 5px;
-        width: 340px;
-        height: 40px;
-        margin-top: 20px;
-        padding-left: 10px;
-      }
-      .formSubmit{
-        margin-top: 20px;
-        font-family: 'OpenSans';
-        font-size: 16px;
-        font-weight: 600;
-        outline: none;
-        border: none;
-        color: $text;
-        padding: 10px 0;
-        text-align: center;
-        background: $accent;
-        border-radius: 5px;
-      }
-      .form-links{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-        a{
-          color: $accent;
-        }
-      }
-      .form-socialText{
-        margin-top: 20px;
-        margin-bottom: 15px;
-      }
-      .form-social{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: $textNuance;
-        font-weight: 600;
-        font-size: 16px;
-        .form-iconsWrapper{
-          a{
-            margin-right: 10px;
-          }
-          a:last-child{
-            margin-right: 0;
-          }
-        }
-      }
-    }
-  }
+  height: 60vh;
+  flex-direction: column;
+}
 
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $bg-lightTheme-nuance;
+  padding: 40px 30px;
+  border-radius: 15px;
+}
+
+.form__logoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $text-form;
+  gap: 10px;
+}
+
+.form__logo{
+  height: 50px;
+  width: 50px;
+}
+
+
+.form__btn{
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  color: $bg-lightTheme-base;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  background: $bg-common-accent;
+  border-radius: 5px;
+}
+
+.form__links{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+.form__social{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $color-lightTheme-base;
+  font-weight: 600;
+  font-size: $text-accent;
+  margin-top: 20px;
+}
+.form__iconsWrapper{
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+.form__iconsWrapper_noMargin{
+  margin-right: 0;
 }

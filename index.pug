@@ -1,13 +1,27 @@
-doctype html
-html(lang= 'ru')
-    head
-        meta(charset='utf-8')
-        title= 'CloudStorage'
-    body
-        include src/components/components
-        +header
-        .row
-            +sidebar
-            .row__col
-                +subheader
+extends ./src/pages/template
 
+block variables
+    - const title = 'Войти'
+
+block content
+    +header(false)
+    section.main
+        .form
+            a.form__logoWrapper
+                img.form__logo(src= require('@/assets/logo.svg') alt='logo')
+                span CloudStorage
+            +input(false, text, 'Username or E-mail')
+            +input(false, text, 'Password')
+            button.form__btn Войти
+            .form__links
+                a(href='forgot.html') Забыли пароль?
+                a(href='index.html') Регистрация
+            .form__social
+                span Войти через:
+                .form__iconsWrapper
+                    a(href='#')
+                        img.form__icon(src=require('@/assets/googleLogo.svg'))
+                    a(href='#')
+                        img.form__icon(src=require('@/assets/githubLogo.svg'))
+                    a(href='#')
+                        img.form__icon(src=require('@/assets/telegramLogo.svg'))

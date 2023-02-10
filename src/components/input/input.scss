@@ -1,0 +1,20 @@
+@import "../variable";
+
+.inputWrapper__label{
+
+}
+
+.inputWrapper__input{
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: $text-accent;
+  background: $bg-lightTheme-base;
+  color: $color-lightTheme-base;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  width: 340px;
+  height: 40px;
+  margin-top: 20px;
+  padding-left: 10px;
+}

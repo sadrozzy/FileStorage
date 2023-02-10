@@ -1,0 +1,5 @@
+mixin input (hasLabel = false, type, placeholder, id)
+    .inputWrapper
+        if (hasLabel)
+            label(for= id).inputWrapper__label
+        input.inputWrapper__input(type= type, placeholder= placeholder, id= id)
