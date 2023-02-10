@@ -24,7 +24,8 @@ const optimization = () => {
 
     return config
 }
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
+const filename = ext => isDev ? `[name]${ext}` : `[contenthash]${ext}`
+const htmlFilename = name => isDev ? `${name}.html` : `[contenthash].html`
 const cssLoaders = extra => {
     const loaders = [
         MiniCssExtractPlugin.loader,
@@ -66,17 +67,17 @@ const jsLoaders = () => {
     return loaders
 }
 const plugins = () => {
-    // if (isProd) {
-    //     base.push(new BundleAnalyzerPlugin())
-    // }
-
     return [
         new HTMLWebpackPlugin({
             template: path.join(__dirname, './src/pages/app/app.pug'),
-            filename: filename('html'),
+            filename: htmlFilename('app'),
+        }),
+        new HTMLWebpackPlugin({
+            template: path.join(__dirname, './src/pages/app/sign.pug'),
+            filename: htmlFilename('sign'),
         }),
         new MiniCssExtractPlugin({
-            filename: filename('css')
+            filename: filename('.css')
         })
     ]
 }
@@ -95,10 +96,10 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        main: './app.js'
+        main: './app.js',
     },
     output: {
-        filename: filename('js'),
+        filename: filename('.js'),
         path: path.resolve(__dirname, 'dist'),
         clean: true
     },
@@ -113,21 +114,19 @@ module.exports = {
         port: 4200,
         hot: isDev
     },
-    //devtool: isDev ? 'source-map' : '',
     plugins: plugins(),
     module: {
         rules: [
-            // {
-            //     test: /\.html$/,
-            //     loader: "html-loader"
-            // },
             {
                 test: /\.css$/,
                 use: cssLoaders()
             },
             {
                 test: /\.pug$/,
-                loader: 'pug-loader'
+                loader: 'pug-loader',
+                options: {
+                    pretty: isDev
+                }
             },
             {
                 test: /\.less$/,
@@ -141,14 +140,14 @@ module.exports = {
                 test: /\.(png|jpe?g|svg|gif)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'assets/icons/[name].[hash:8][ext]',
+                    filename: `assets/images/${filename('[ext]')}`,
                 },
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: `assets/fonts/[name].[hash:8][ext]`,
+                    filename: `assets/fonts/${filename('[ext]')}`,
                 },
             },
             {
