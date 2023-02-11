@@ -1,30 +1,29 @@
 extends ../template
 
 block variables
-    - const title = 'Войти'
+    - const title = 'Регистрация'
 
 block content
     +header(false)
     section.main
         .form
-            a.form__logo(class='header__logo_sizing')
-                img(src= require('@/assets/logo.svg') alt='logo')
+            a.form__logoWrapper
+                img.form__logo(src= require('@/assets/logo.svg') alt='logo')
                 span CloudStorage
-            +input(false, text, 'Username or E-mail')
-            +input(false, text, 'Password')
-            button.form__btn Войти
+            +input(false, text, 'Username')
+            +input(false, email, 'E-mail')
+            +input(false, password, 'Password')
+            +input(false, password, 'Confirm password')
+            button.form__btn Зарегистрироваться
             .form__links
-                a(href='forgot.html') Забыли пароль?
-                a(href='index.html') Регистрация
+                a(href='index.html') Назад
+                a(href='reset.html') Забыли пароль?
             .form__social
                 span Войти через:
                 .form__iconsWrapper
                     a(href='#')
-                        img(src=require('@/assets/googleLogo.svg'))
+                        img.form__icon(src=require('@/assets/googleLogo.svg'))
                     a(href='#')
-                        img(src=require('@/assets/githubLogo.svg'))
+                        img.form__icon(src=require('@/assets/githubLogo.svg'))
                     a(href='#')
-                        img.form__iconsWrapper_noMargin(src=require('@/assets/telegramLogo.svg'))
-
-
-
+                        img.form__icon(src=require('@/assets/telegramLogo.svg'))

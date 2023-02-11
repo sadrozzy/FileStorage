@@ -81,8 +81,8 @@ const plugins = () => {
             filename: htmlFilename('signup'),
         }),
         new HTMLWebpackPlugin({
-            template: path.join(__dirname, './src/pages/auth/resetpass.pug'),
-            filename: htmlFilename('resetpass'),
+            template: path.join(__dirname, './src/pages/auth/reset.pug'),
+            filename: htmlFilename('reset'),
         }),
         new MiniCssExtractPlugin({
             filename: filename('.css')

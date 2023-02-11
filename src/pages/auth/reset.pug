@@ -1,0 +1,16 @@
+extends ../template
+
+block variables
+    - const title = 'Восстановление аккаунта'
+
+block content
+    +header(false)
+    section.main
+        .form
+            a.form__logoWrapper
+                img.form__logo(src=require('@/assets/logo.svg') alt='logo')
+                span CloudStorage
+            +input(false, text, 'Username or E-mail')
+            button.form__btn Восстановить пароль
+            .form__links
+                a(href='index.html') Назад

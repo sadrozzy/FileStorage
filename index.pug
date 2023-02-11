@@ -8,14 +8,14 @@ block content
     section.main
         .form
             a.form__logoWrapper
-                img.form__logo(src= require('@/assets/logo.svg') alt='logo')
+                img.form__logo(src=require('@/assets/logo.svg') alt='logo')
                 span CloudStorage
             +input(false, text, 'Username or E-mail')
-            +input(false, text, 'Password')
+            +input(false, password, 'Password')
             button.form__btn Войти
             .form__links
-                a(href='forgot.html') Забыли пароль?
-                a(href='index.html') Регистрация
+                a(href='signup.html') Регистрация
+                a(href='reset.html') Забыли пароль?
             .form__social
                 span Войти через:
                 .form__iconsWrapper

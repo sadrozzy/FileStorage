@@ -9,10 +9,6 @@
   padding: 0;
 }
 
-a{
-  text-decoration: none;
-}
-
 html {
   height: 100vh;
   display: flex;
@@ -20,6 +16,10 @@ html {
 
 input {
   background: none;
+}
+
+a{
+  text-decoration: none;
 }
 
 body {

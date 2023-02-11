@@ -48,6 +48,9 @@ body{
   text-align: center;
   background: $bg-common-accent;
   border-radius: 5px;
+  &:active{
+    background: $bg-common-accentShadow;
+  }
 }
 
 .form__links{
@@ -55,7 +58,13 @@ body{
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
+  a{
+    color: $bg-common-accent;
+    text-decoration: none;
+  }
 }
+
+
 .form__social{
   display: flex;
   flex-direction: column;
