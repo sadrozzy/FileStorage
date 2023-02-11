@@ -1,0 +1,22 @@
+@import "../variable";
+
+.accountModal {
+  background: $bg-lightTheme-nuance;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 40px 30px;
+
+  gap: 20px;
+  border-radius: 15px;
+}
+
+.accountModal__label {
+  font-size: 24px;
+}
+
+.accountModal__form {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}

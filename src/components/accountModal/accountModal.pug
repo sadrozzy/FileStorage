@@ -1,11 +1,14 @@
-mixin input (hasLabel, type, placeholder, id)
-    if (hasLabel)
-        .inputWrapper
-            label(for= id)
-
-
+include ../inputText/inputText
+include ../inputSubmit/inputSubmit
+include ../inputAvatar/inputAvatar
 
 mixin accountModal
     .accountModal
-        span.accountModal__title Profile
-        .accountModal__content
+        span.accountModal__label Profile
+        form.accountModal__form
+            +inputAvatar('input_avatar')
+            +input(true,'text','Enter Username','input_username', 'Username').inputWrapper__input_username
+            +input(true,'email','Enter E-mail','input_email', 'E-mail').inputWrapper__input_email
+            +input(true,'password','Enter Password','input_password_old', 'Old Password').inputWrapper__input_password
+            +input(true,'password','Enter Password','input_password_new', 'New Password').inputWrapper__input_password
+            +inputSubmit('Save')

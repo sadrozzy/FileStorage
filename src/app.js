@@ -1,9 +1,7 @@
 //Styles
 import '@/pages/app/app.scss'
 import '@/pages/common.scss'
-import '@/components/header/header.scss'
-import '@/components/sidebar/sidebar.scss'
-import '@/components/subHeader/subHeader.scss'
+import '@/components/components.scss'
 
 //Icons
 import '@/assets/logo.svg'
@@ -22,8 +20,3 @@ import '@/assets/icons/add.svg'
 import '@/assets/icons/sort.svg'
 import '@/assets/icons/chevron.svg'
 import '@/assets/icons/grid.svg'
-
-//21
-//Fonts
-// import '@/assets/fonts/OpenSans-SemiBold.ttf'
-// import '@/assets/fonts/OpenSans-Regular.ttf'

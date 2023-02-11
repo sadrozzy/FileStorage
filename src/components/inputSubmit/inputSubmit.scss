@@ -1,0 +1,14 @@
+@import "../variable";
+
+.inputSubmit {
+  height: 40px;
+  background: $bg-common-accent;
+  color: $color-darkTheme-base;
+  border: none;
+  border-radius: 5px;
+
+  &:hover {
+    background: $bg-common-accentShadow;
+    cursor: pointer;
+  }
+}

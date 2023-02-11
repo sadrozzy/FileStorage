@@ -19,36 +19,7 @@ header {
     color: $color-lightTheme-base;
   }
 
-  .header__search {
-    position: relative;
-    display: flex;
-    flex-grow: 1;
-    height: 38px;
 
-    input {
-      &:focus {
-        border-color: $color-lightTheme-base;
-      }
-
-      color: $color-lightTheme-base;
-      border: 2px solid $color-darkTheme-nuance;
-      font-size: $text-base;
-      background-image: url("@/assets/icons/loop.svg");
-      background-repeat: no-repeat;
-      background-position: 10px 50%;
-      padding: 0 38px;
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .search__settings {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      height: 100%;
-      right: 10px;
-    }
-  }
 
   .col3 {
     justify-content: flex-end;

@@ -73,8 +73,8 @@ const plugins = () => {
             filename: htmlFilename('app'),
         }),
         new HTMLWebpackPlugin({
-            template: path.join(__dirname, './src/pages/app/sign.pug'),
-            filename: htmlFilename('sign'),
+            template: path.join(__dirname, './draft/draft.pug'),
+            filename: htmlFilename('draft'),
         }),
         new MiniCssExtractPlugin({
             filename: filename('.css')
@@ -82,15 +82,29 @@ const plugins = () => {
     ]
 }
 
-const components = globule
+
+//Generation of Declaration
+const components_pug = globule
     .find(["src/components/**/*.pug","!src/components/components.pug"])
     .map((path) => path.split('/').pop())
     .reduce((acc,currentItem) => acc + `include ${currentItem.replace('.pug', '')}/${currentItem}\n`, ``);
 
-fs.writeFile("src/components/components.pug", components, (err) => {
+const components_scss = globule
+    .find(["src/components/**/*.scss","!src/components/components.scss", "!src/components/variable.scss"])
+    .map((path) => path.split('/').pop())
+    .reduce((acc,currentItem) => acc + `@import "${currentItem.replace('.scss', '')}/${currentItem}";\n`, ``);
+
+fs.writeFile("src/components/components.pug", components_pug, (err) => {
     if (err) throw err
-    console.log("Components are generated automatically");
+    console.log("PUG declaration generated successfully");
 });
+
+fs.writeFile("src/components/components.scss", components_scss, (err) => {
+    if (err) throw err
+    console.log("SCSS declaration generated successfully");
+});
+//Generation of Declaration
+
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),

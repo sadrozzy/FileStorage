@@ -1,3 +1,5 @@
+include ../inputSearch/inputSearch
+
 mixin header__btn (type, icon)
     .header__btn(class= type)
         img(src= require(`@/assets/icons/${icon}.svg`) alt=`${type}`)
@@ -7,19 +9,14 @@ mixin header__logo
         img(src= require('@/assets/logo.svg') alt='logo')
         span CloudStorage
 
-mixin header__search
-    .header__search
-        input(type= 'text' placeholder= 'Search')
-        .search__settings
-            img(src= require('@/assets/icons/extendedSettings.svg'))
-
 mixin header (authorized=true)
     header
         .header__col.col1
             +header__logo
         if authorized
             .header__col.col2
-                +header__search
+                +inputSearch
         .header__col.col3
             +header__btn('theme','moon')
-            +header__btn('profile','profile')
+            if authorized
+                +header__btn('profile','profile')

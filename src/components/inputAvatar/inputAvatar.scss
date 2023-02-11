@@ -1,0 +1,33 @@
+@import "../variable";
+
+.inputAvatar {
+  display: flex;
+  align-items: center;
+}
+
+.inputAvatar__input {
+  display: none;
+}
+
+.inputAvatar__label {
+  flex-grow: 1;
+}
+
+.inputAvatar__container {
+  cursor: pointer;
+}
+
+.inputAvatar__inner {
+  height: 66px;
+  width: 66px;
+  background: $bg-darkTheme-sub;
+  border-radius: 66px;
+  display: grid;
+  place-items: center;
+}
+
+.inputAvatar__caption {
+  color: $color-darkTheme-base;
+  font-size: $text-nuance;
+  text-align: center;
+}
