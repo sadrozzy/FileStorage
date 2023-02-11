@@ -3,7 +3,7 @@ import '@/pages/app/app.scss'
 import '@/pages/common.scss'
 import '@/components/components.scss'
 
-//Icons
+//Icons 2
 import '@/assets/logo.svg'
 import '@/assets/icons/extendedSettings.svg'
 import '@/assets/icons/moon.svg'
