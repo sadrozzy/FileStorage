@@ -1,0 +1,41 @@
+@import "../variable";
+
+.subheader {
+  display: flex;
+  height: 40px;
+
+  .subheader__col {
+    display: flex;
+  }
+
+  .subheader__col.col1 {
+    flex-grow: 1;
+    gap: 25px;
+
+    .subheader__btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: $color-lightTheme-base;
+    }
+  }
+
+  .subheader__col.col2 {
+    gap: 15px;
+
+    .subheader__sort {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      gap: 10px;
+      color: $color-lightTheme-base;
+    }
+
+    .subheader__viewMode {
+      width: 40px;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+}

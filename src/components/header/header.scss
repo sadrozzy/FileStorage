@@ -1,0 +1,41 @@
+@import "../variable";
+
+header {
+  display: flex;
+  padding: 0 20px;
+  height: 60px;
+
+  .header__col {
+    width:100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .header__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: $text-accent;
+    color: $color-lightTheme-base;
+  }
+
+
+
+  .col3 {
+    justify-content: flex-end;
+    gap: 15px;
+
+    .header__btn {
+      &:hover {
+        background: $bg-common-transparent;
+        cursor: pointer;
+      }
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+}

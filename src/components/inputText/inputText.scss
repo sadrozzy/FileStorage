@@ -1,0 +1,22 @@
+@import "../variable";
+
+.inputText {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.inputText__label {
+  color: $color-lightTheme-base;
+  font-size: $text-accent;
+}
+
+.inputText__input {
+  background: $bg-lightTheme-base;
+  color: $color-lightTheme-base;
+  font-size: $text-accent;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  padding: 0 10px;
+}

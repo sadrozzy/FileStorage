@@ -1,0 +1,31 @@
+@import "~normalize.css";
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  outline: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  display: flex;
+}
+
+input {
+  background: none;
+}
+
+body {
+  display: flex;
+  flex-grow: 1;
+}
+
+.page {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}

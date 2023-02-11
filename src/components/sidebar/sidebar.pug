@@ -1,0 +1,23 @@
+mixin sidebar__link (icon, name, type)
+    li.links__link(class= `${type}`)
+        img(src=require (`@/assets/icons/${icon}.svg`))
+        span #{name}
+
+mixin sidebar__storage
+    .sidebar__storage
+        .sidebar__indicator
+            .sidebar__track
+        span Свободно 9.8 из 10 гб
+
+mixin sidebar
+    aside.sidebar
+        nav.sidebar__nav
+            span Files
+            ul.links.sidebar__links
+                +sidebar__link('folder','All Files','allFiles')
+                +sidebar__link('recent','Recent Files','recentFiles')
+                +sidebar__link('featured','Featured','featuredFiles')
+                +sidebar__link('trashcan','Trashcan','trashcan')
+                +sidebar__link('common','Common Files','commonFiles')
+        .sidebar__wrapper
+            +sidebar__storage
