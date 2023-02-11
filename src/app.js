@@ -1,4 +1,4 @@
-import '@/auth.js'
+import '@/themeChange.js'
 
 //Styles
 import '@/pages/app/app.scss'
@@ -26,6 +26,8 @@ import '@/assets/icons/add.svg'
 import '@/assets/icons/sort.svg'
 import '@/assets/icons/chevron.svg'
 import '@/assets/icons/grid.svg'
+
+import '@/assets/icons/sun.svg'
 // Icons auth
 import '@/assets/icons/moon.svg'
 import '@/assets/googleLogo.svg'
