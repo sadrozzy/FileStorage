@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0de801b1-b944-43a4-82f8-4d638a1dc519" name="Changes" comment="fetch: 'finished auth layout'" />
+    <list default="true" id="0de801b1-b944-43a4-82f8-4d638a1dc519" name="Changes" comment="fetch: 'finished auth layout'">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +72,7 @@
       <workItem from="1676022482214" duration="56000" />
       <workItem from="1676022546518" duration="3079000" />
       <workItem from="1676046560030" duration="11633000" />
-      <workItem from="1676127676081" duration="7275000" />
+      <workItem from="1676127676081" duration="7591000" />
     </task>
     <task id="LOCAL-00001" summary="fetch: 'finished auth layout'">
       <created>1676130400421</created>
