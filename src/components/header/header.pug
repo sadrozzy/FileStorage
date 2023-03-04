@@ -2,12 +2,12 @@ include ../inputSearch/inputSearch
 
 mixin header__btn (type, icon)
     .header__btn(class= type)
-        img(src= require(`@/assets/icons/${icon}.svg`) alt=`${type}`)
+        img(src= require(`@/components/header/_theme/_light/${icon}.svg`) alt=`${type}`)
 
 mixin header__logo
     a.header__logo
-        img(src= require('@/assets/logo.svg') alt='logo')
-        span CloudStorage
+        img(src= require('@components/header/logo.svg') alt='logo')
+        span.header__title CloudStorage
 
 mixin header (authorized=true)
     header

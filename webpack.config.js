@@ -5,6 +5,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const cssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
@@ -72,9 +73,14 @@ const plugins = () => {
             template: path.join(__dirname, './src/pages/app/app.pug'),
             filename: htmlFilename('app'),
         }),
+        new HTMLWebpackPlugin({
+            template: path.join(__dirname, './draft/page.html'),
+            filename: htmlFilename('draft'),
+        }),
         new MiniCssExtractPlugin({
             filename: filename('.css')
-        })
+        }),
+        new NodePolyfillPlugin()
     ]
 }
 
@@ -103,10 +109,10 @@ fs.writeFile("src/components/components.scss", components_scss, (err) => {
 
 
 module.exports = {
-    context: path.resolve(__dirname, 'src'),
+
     mode: 'development',
     entry: {
-        main: './app.js',
+        main: '/src/app.js',
     },
     output: {
         filename: filename('.js'),
@@ -117,11 +123,12 @@ module.exports = {
         extensions: ['.js', '.json', '.png'],
         alias: {
             '@': path.resolve(__dirname, 'src'),
+            '@components': path.resolve(__dirname, 'src/components')
         }
     },
     optimization: optimization(),
     devServer: {
-        port: 4200,
+        port: 3000,
         hot: isDev
     },
     plugins: plugins(),
@@ -150,7 +157,7 @@ module.exports = {
                 test: /\.(png|jpe?g|svg|gif)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: `assets/images/${filename('[ext]')}`,
+                    filename: `assets/images/[contenthash][ext]`,
                 },
             },
             {
