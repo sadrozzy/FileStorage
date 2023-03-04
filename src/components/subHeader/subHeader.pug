@@ -1,13 +1,13 @@
 mixin subheader__btn (icon, name, type)
     .subheader__btn(class= type)
-        img(src= require(`@/assets/icons/${icon}.svg`))
+        img(src= require(`@/components/subHeader/_theme/_light/${icon}.svg`))
         span #{name}
 
 mixin subheader__sort
     .subheader__sort
-        img(src= require(`@/assets/icons/sort.svg`))
+        img(src= require(`@/components/subHeader/_theme/_light/sort.svg`))
         span.sort__value По Названию
-        img(src= require(`@/assets/icons/chevron.svg`))
+        img(src= require(`@/components/subHeader/_theme/_light/chevron.svg`))
 
 mixin subheader
     .subheader
@@ -17,4 +17,4 @@ mixin subheader
         .subheader__col.col2
             +subheader__sort
             .subheader__viewMode
-                img(src= require(`@/assets/icons/grid.svg`))
+                img(src= require(`@/components/subHeader/_theme/_light/grid.svg`))
